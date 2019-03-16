@@ -14,9 +14,9 @@ def get_RS_WFIREX3(ip)
     temp, rh, lux = TCPSocket.open(ip, 60001) { |socket|
       socket.puts "\xAA\x00\x01\x18\x50"
       res  = socket.gets.to_s.unpack("H*").to_s
-      temp = res[16,2].to_s.to_i(16)/10.0
+      temp = res[14,4].to_s.to_i(16)/10.0
       rh   = res[10,4].to_s.to_i(16)/10.0
-      lux  = res[20,2].to_s.to_i(16)
+      lux  = res[18,4].to_s.to_i(16)
       [ temp, rh, lux ]
     }
   rescue Exception => exc
