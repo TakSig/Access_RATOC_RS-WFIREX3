@@ -4,7 +4,7 @@
 #
 # https://iot.ratocsystems.com/products/rs-wfirex3/
 #
-# TakaShiga
+# TakShig
 #
 
 require 'socket'
